@@ -1,0 +1,640 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400&family=Roboto:wght@300&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Public Sans", sans-serif;
+    color: hsl(233, 8%, 62%);
+    overflow-x: hidden;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 24px;
+    background-color: hsl(0, 0%, 100%);
+}
+
+/* this controls the three lines menu */
+.mobile-menu {
+    margin-top: 2px;
+}
+
+.mobile-menu > div {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: hsl(233, 26%, 24%);
+    transform-origin: 3px 1px;
+    transition: all 300ms ease-in-out;
+}
+
+.mobile-menu > div:not(:first-child) {
+    margin-top: 5px;
+}
+
+.mobile-menu-open > div:first-child {
+    transform: rotate(45deg);
+}
+
+.mobile-menu-open > div:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-open > div:last-child {
+    transform: rotate(-45deg);
+}
+
+.header-links {
+    display: flex;
+    margin-top: 2px;
+}
+
+.header-links > a {
+    text-decoration: none;
+    color: hsl(233, 8%, 62%);
+    font-size: 14px;
+    position: relative;
+}
+
+.header-links > a:not(:last-child) {
+    margin-right: 30px;
+}
+
+.header-links > a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 35px;
+    display: block;
+    height: 5px;
+    background: linear-gradient(to right, hsl(136, 65%, 51%) , hsl(192, 70%, 51%));
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
+}
+
+.header-links > a:hover::after {
+    opacity: 1;
+}
+
+.header-links > a:hover {
+    color: hsl(233, 26%, 24%);
+    transition: color 200ms ease-in-out;
+}
+
+
+.invite-btn {
+    margin-top: 2px;
+}
+
+.request-invite-btn {
+    background: linear-gradient(to right, hsl(136, 65%, 51%) , hsl(192, 70%, 51%));
+    padding: 12px 34px 14px;
+    border-radius: 50px;
+    text-decoration: none;
+    color: hsl(0, 0%, 100%);
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/* .invite-btn > a {
+    background: linear-gradient(to right, hsl(136, 65%, 51%) , hsl(192, 70%, 51%));
+    padding: 8px 30px 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    text-decoration: none;
+    color: hsl(0, 0%, 100%);
+    font-size: 14px;
+    font-weight: 400;
+} */
+
+.request-invite-btn:hover {
+    opacity: 0.8;
+    transition: opacity 200ms ease-in-out;
+}
+
+/* mobile and responsive size */
+@media screen and (max-width: 63.9375em) { 
+    .header-links {
+        display: none;
+    }
+
+    .invite-btn {
+        display: none;
+    }
+
+    .feature-section > h2 {
+        text-align: center;
+    }
+
+    .feature-section > p {
+        text-align: center;
+    }
+
+    .feature-item {
+        margin-bottom: 30px;
+    }
+
+    .feature-title {
+        text-align: center;
+    }
+
+    .feature-description {
+        text-align: center;
+    }
+
+    .feature-icon {
+        text-align: center;
+    }
+}
+
+/* desktop size */
+@media screen and (min-width: 63.9375em) { 
+    nav {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .mobile-menu {
+        display: none;
+    }
+
+    .hero-section {
+        display: flex;
+        align-items: center;
+    }
+
+    .hero-image {
+        flex: 5;
+        order: 2;
+    }
+
+    .hero-text {
+        flex: 4;
+        order: 1;
+        padding-left: 40px;
+    }
+
+    .hero-section > :nth-child(2) > h1 {
+        font-size: 52px;
+    }
+
+    .hero-section > :nth-child(2) > p {
+        font-size: 20px;
+    }
+
+    .hero-text > p {
+        padding-left: 20px;
+        margin-left: 20px;
+    }
+
+    .request-invite-btn {
+        margin-left: 36px;
+    }
+
+    .hero-section > :nth-child(2) {
+        text-align: left;
+      }
+
+    .hero-image > div {
+        /* background-image: url("/Reference folder/images/bg-intro-desktop.svg"); */
+        background-image: none;
+        min-height: 545px;
+        background-position: left center;
+    }
+
+    .hero-image > div::after {
+        /* background-position: 40% 50%; */
+        content: "";
+        background-image: url("/Reference folder/images/image-mockups.png");
+        position: absolute;
+        width: calc(100% - 2rem);
+        height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        left: 67%;
+        /* left: 50%; */
+        transform: translateX(-50%);
+        height: 125%;
+    }
+    
+    .hero-image > div::before {
+        content: "";
+        background-image: url("/Reference folder/images/bg-intro-desktop.svg");
+        position: absolute;
+        /* width: calc(100% - 2rem); */
+        height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 135%;
+        /* width: 100%; */
+    }
+
+    .feature-grid {
+        display: flex;
+    }
+
+    .article-grid {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        column-gap: 10px;
+    }
+
+    .article-content > :first-child {
+        text-align: left;
+        margin-left: 7px;
+    }
+
+    .article-image > img {
+        max-width: 250px;
+        height: 187px;
+    }
+
+    .article-text-parent {
+        height: 145px;
+    }
+
+    .article-text-parent > div {
+        max-width: 250px;
+    }
+    
+    footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 2fr;
+        padding: 50px 7% 50px 7%;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+         "logo links1 links2 cta"
+         "socials links1 links2 cta";
+    }
+
+    .logo {
+        grid-area: logo;
+    }
+
+    .footer-socials {
+        grid-area: socials;
+    }
+
+    .footer-links-col1 {
+        grid-area: links1;
+    }
+
+    .footer-links-col2 {
+        grid-area: links2;
+    }
+
+    .footer-cta {
+        grid-area: cta;
+    }
+
+    /* .logo > img {
+        margin-bottom: 40px;
+    } */
+
+    /* .footer-links-col1 {
+        text-align: left;
+    } */
+}
+
+/* .overlay {
+    position: fixed;
+    top: 60px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-image: linear-gradient(hsl(233, 26%, 24%), transparent);
+    opacity: 0; 
+}
+
+.overlay-fade-in {
+    animation: fade-in 600ms ease-in-out 300ms forwards;
+} */
+
+/* .overlay-fade-out {
+    animation: fade-out 600ms ease-in-out forwards;
+} */
+
+.overlay-fade-in {
+    position: fixed;
+    top: 60px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-image: linear-gradient(hsl(233, 26%, 24%), transparent);
+    opacity: 0;
+    animation: fade-in 600ms ease-in-out 300ms forwards; 
+}
+
+.overlay-fade-out {
+    position: fixed;
+    top: 60px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-image: linear-gradient(hsl(233, 26%, 24%), transparent);
+    opacity: 0;
+    animation: fade-out 600ms ease-in-out forwards; 
+}
+
+/* keyframes animation for fade-in and fade-out */
+@keyframes fade-in {
+    0% {
+      opacity: 0; 
+    }
+    100% {
+      opacity: 1; 
+    }
+  }
+
+@keyframes fade-out {
+    0% {
+      opacity: 1; 
+    }
+    100% {
+      opacity: 0; 
+    }
+  }
+
+
+@keyframes menu-fade-in {
+    0% {
+      visibility: hidden;
+    }
+    100% {
+      visibility: visible;
+    }
+}
+
+@keyframes menu-fade-out {
+    0% {
+      visibility: visible;
+    }
+    100% {
+      visibility: hidden;
+    }
+}
+/* this is for the mobile menu header links */
+.mobile-menu-links {
+    background: hsl(0, 0%, 100%);
+    border-radius: 3px;
+    margin-top: 24px;
+    position: absolute;
+    width: calc(100% - 3rem);
+    left: 50%;
+    transform: translateX(-50%);
+    visibility: hidden;
+    z-index: 1;
+}  
+
+.mobile-menu-links > a {
+    text-decoration: none;
+    color: hsl(233, 26%, 24%);
+    font-size: 14px;
+    display: block;
+    text-align: center;
+    padding: 25px 24px 0px;
+}
+
+.mobile-menu-links > a:last-child {
+    padding-bottom: 25px;
+}
+
+/* for when the mobile menu is displayed(fades in) */
+.mobile-menu-fade-in {
+    animation: menu-fade-in 600ms ease-in-out 300ms forwards;
+}
+
+/* for when the mobile-menu fades out */
+
+.mobile-menu-fade-out {
+    animation: menu-fade-out 600ms ease-in-out forwards;
+}
+
+/* hero section coding starts here */
+.hero-section {
+    background: hsl(0, 0%, 98%);
+}
+
+.intro-image {
+    background-image: url("/Reference folder/images/bg-intro-mobile.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 60%;
+    min-height: 280px;
+    position: relative;
+}
+
+.intro-image::before {
+    content: "";
+    background-image: url("/Reference folder/images/image-mockups.png");
+    position: absolute;
+    width: calc(100% - 2rem);
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* .phone-image {
+    position: absolute;
+    top: -7%;
+    width: calc(100% - 3rem);
+    left: 50%;
+    transform: translateX(-50%);
+} */
+
+/* the part that contains the text and the button */
+
+.hero-text {
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.hero-text > h1 {
+    color: hsl(233, 26%, 24%);
+    font-weight: 300;
+    font-size: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 20px;
+    padding-bottom: 20px;
+}
+
+.hero-text > p {
+    color: hsl(233, 8%, 62%);
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-bottom: 40px;
+    line-height: 1.15;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.container {
+    padding: 50px 7% 50px 7%;
+}
+
+/* feature section styles start here */
+
+.feature-section {
+    background-color: hsl(220, 16%, 96%);
+}
+
+.feature-section > h2 {
+    color: hsl(233, 26%, 24%);
+    font-weight: 300;
+    font-size: 30px;
+}
+
+.feature-section > p {
+    line-height: 22px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.feature-grid > div:not(:last-child) {
+    margin-right: 10px;
+}
+
+.feature-item {
+    flex: 1;
+}
+
+/* .feature-icon {
+
+} */
+
+.feature-title {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: hsl(233, 26%, 24%);
+    font-size: 20px;
+}
+
+.feature-description {
+    line-height: 22px;
+}
+
+/* article section coding starts here */
+
+.article-section {
+    background-color: hsl(0, 0%, 98%);
+}
+
+.article-content > h2 {
+    color: hsl(233, 26%, 24%);
+    font-weight: 400;
+    font-size: 22px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.article-item {
+    margin-bottom: 30px;
+}
+
+.article-image {
+    margin-bottom: -2px;
+    text-align: center;
+}
+
+.article-img {
+    max-width: 280px;
+}
+
+.article-text {
+    margin-top: 0px;
+    background-color: hsl(0, 0%, 100%);
+    max-width: 280px;
+    padding: 15px;
+}
+
+.article-text > a {
+    text-decoration: none;
+    color: hsl(233, 26%, 24%);
+}
+
+.article-text > a:hover {
+    color: hsl(136, 65%, 51%);
+}
+
+.article-text > a > h4 {
+    font-weight: 300;
+}
+
+/* .article-text > h4 {
+    color: hsl(233, 26%, 24%);
+    font-weight: 300;
+} */
+
+.article-text > h6 {
+    font-weight: 300;
+}
+
+.p-bottom {
+    padding-bottom: 7px;
+}
+
+.article-text-parent {
+    display: flex;
+    justify-content: center;
+}
+
+/* footer coding starts here */
+
+footer {
+    background-color: hsl(233, 26%, 24%);
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+/* .footer-content {
+    padding-top: 40px;
+    padding-bottom: 40px;
+} */
+
+.link > a {
+    color: hsl(0, 0%, 100%);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    font-weight: 300;
+}
+
+.link > a:hover {
+    color: hsl(136, 65%, 51%);
+}
+
+.pad-bot {
+    margin-bottom: 20px;
+}
+
+.footer-socials > a {
+    display: inline-block;
+}
+
+.footer-socials > a:not(:last-child) {
+    margin-right: 7px;
+}
+
+.footer-cta > a {
+    display: inline-block;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
